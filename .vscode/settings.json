@@ -1,0 +1,24 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "files.exclude": {
+        "out": false // set this to true to hide the "out" folder with the compiled JS files
+    },
+    "search.exclude": {
+        "out": true // set this to false to include "out" folder in search results
+    },
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#9a5140",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#4bb45f",
+        "activityBarBadge.foreground": "#15202b",
+        "titleBar.activeBackground": "#763e31",
+        "titleBar.inactiveBackground": "#763e3199",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveForeground": "#e7e7e799",
+        "statusBar.background": "#763e31",
+        "statusBarItem.hoverBackground": "#9a5140",
+        "statusBar.foreground": "#e7e7e7"
+    },
+    "peacock.color": "#763e31"
+}

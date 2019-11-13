@@ -1,0 +1,69 @@
+{
+    "name": "docker-dive",
+    "displayName": "Docker dive",
+    "icon": "images/icon.png",
+    "description": "A VSCode extension to run dive command on a Docker image.",
+    "version": "1.0.0",
+    "publisher": "sandipchitale",
+    "author": {
+        "name": "Sandip Chitale"
+    },
+    "maintainers": [
+        "Sandip Chitale <sandipchitale@gmail.com>"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sandipchitale/docker-dive"
+    },
+    "engines": {
+        "vscode": "^1.30.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.docker-dive"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "configuration": {
+            "properties": {
+                "extension.docker-dive.diveCommand": {
+                    "type": "string",
+                    "default": "dive",
+                    "description": "dive executable"
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "extension.docker-dive",
+                "title": "Dive",
+                "category": "Docker"
+            }
+        ],
+        "menus": {
+            "view/item/context": [
+                {
+                    "command": "extension.docker-dive",
+                    "when": "view == dockerImages && viewItem == image",
+                    "group": "images_1_run@1"
+                }
+
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
