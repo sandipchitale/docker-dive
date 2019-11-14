@@ -10,7 +10,9 @@ If the Docker \( ms-azuretools.vscode-docker \) extension is installed:
 
 Otherwise, the extension first runs the `docker images` command to get a the list of known Docker images. Then the user is prompted to select a Docker image. Then the `dive` command in run on that docker image.
 
-The `docker` and `dive` commands are expected to be available on the PATH.
+The `docker` commands is expected to be available on the PATH.
+
+Uses the `dive` command from the path specified in settings. Default value is `dive`, in which case the `docker` commands is expected to be available on the PATH.
 
 ## Known Issues
 
@@ -21,3 +23,8 @@ No known issues.
 ### 1.0.0
 
 Initial release
+
+### 1.0.1
+
+Use configured `dive` command.
+Create terminal if needed.

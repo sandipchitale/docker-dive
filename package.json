@@ -3,7 +3,7 @@
     "displayName": "Docker dive",
     "icon": "images/icon.png",
     "description": "A VSCode extension to run dive command on a Docker image.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "sandipchitale",
     "author": {
         "name": "Sandip Chitale"
@@ -47,7 +47,7 @@
                 {
                     "command": "extension.docker-dive",
                     "when": "view == dockerImages && viewItem == image",
-                    "group": "images_1_run@1"
+                    "group": "images_2_general@10"
                 }
 
             ]
