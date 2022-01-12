@@ -1,0 +1,77 @@
+{
+    "name": "docker-dive",
+    "displayName": "Docker dive",
+    "icon": "images/icon.png",
+    "description": "A VSCode extension to run dive command on a Docker image.",
+    "version": "1.0.2",
+    "publisher": "sandipchitale",
+    "author": {
+        "name": "Sandip Chitale"
+    },
+    "maintainers": [
+        "Sandip Chitale <sandipchitale@gmail.com>"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sandipchitale/docker-dive"
+    },
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.docker-dive"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "configuration": {
+            "properties": {
+                "extension.docker-dive.diveCommand": {
+                    "type": "string",
+                    "default": "dive",
+                    "description": "dive executable"
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "extension.docker-dive",
+                "title": "Dive",
+                "category": "Docker"
+            }
+        ],
+        "menus": {
+            "view/item/context": [
+                {
+                    "command": "extension.docker-dive",
+                    "when": "view == dockerImages && viewItem == image",
+                    "group": "images_2_general@10"
+                }
+
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "yarn run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "yarn run compile && yarn run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.63.1",
+        "@types/glob": "^7.1.3",
+        "@types/mocha": "^8.2.2",
+        "@types/node": "14.x",
+        "eslint": "^7.27.0",
+        "@typescript-eslint/eslint-plugin": "^4.26.0",
+        "@typescript-eslint/parser": "^4.26.0",
+        "glob": "^7.1.7",
+        "mocha": "^8.4.0",
+        "typescript": "^4.3.2",
+        "vscode-test": "^1.5.2"
+    }
+}
